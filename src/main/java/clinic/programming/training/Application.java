@@ -6,7 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Application {
 	
-	
+	public int countWords(String words) {
+		int p = 0;
+		String[] separateWords = StringUtils.split(words, ' ');
+		return (separateWords == null) ? p : separateWords.length;
+	}
 
 	public void greet() {
 		List<String> greetings = new ArrayList<>();
@@ -33,6 +37,8 @@ public class Application {
 
 		Application app = new Application();
 		app.greet();
+		int count = app.countWords("I have four words");
+		System.out.println("Word Count: " + count);
 		
 
     }
